@@ -41,3 +41,37 @@ let city = "Delhi"
     There is also array type which can be a string array string[] or number array[]
 */
 
+// special type
+let data: any = "Hello"
+data = 10;
+// no compiler error
+
+let value : unknown = "test"
+if( typeof value === "string"){
+    console.log(value.toUpperCase())
+}
+
+// = => assignment operator where we assign value to a variable.
+// == => equality operator used for comparison
+// === => Strict equality operator
+
+// In Javascript 1=='1' return true. But if we want to compare the value along with the type we should use ===
+// 1 === '1' in type script it will throw exception
+
+// constant cannot be reassigned
+const person = {name: "Raman"}
+person.name = "Arunava"
+// person = {} -> We cannot reassign constant. It will throw exception
+
+// Union Types: It lets a variable hold more than one type. Here x can be either a number or a string
+let x: string | number
+x = "Arunava"
+x = 123
+
+// Array types
+// 2 ways to declare array
+let numbers: number[] = [1,2,3];
+let names: Array<String> = ["Arunava", "Anandi"]
+
+
+
