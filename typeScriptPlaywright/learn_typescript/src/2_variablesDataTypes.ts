@@ -72,6 +72,24 @@ x = 123
 // 2 ways to declare array
 let numbers: number[] = [1,2,3];
 let names: Array<String> = ["Arunava", "Anandi"]
+// We cannot write let names: Array<String> = ["Arunava", 12] as it should hold only string
+
+// Tuples -> Fixed length arrays with specific type at each position
+let users : [string, number] = ["Arunava", 40]
+
+// Enums -> used to define a set of named constants
+enum Direction{
+    North,
+    South,
+    East,
+    West
+}
+
+let move: Direction = Direction.North;
 
 
-
+// Object: Define object structure using types
+let people : {name: string, age: number} = {
+    name : "Arunava",
+    age : 40
+}
