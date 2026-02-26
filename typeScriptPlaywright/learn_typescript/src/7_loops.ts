@@ -128,3 +128,8 @@ numA--->2 numB--->3  numC--->3
 numA--->2 numB--->3  numC--->4
 */
 
+const fruits = ["Apple","Banana","Orange"]
+
+fruits.forEach((fruit, index) => {
+    console.log(index + 1+". I like ",fruit);
+})
