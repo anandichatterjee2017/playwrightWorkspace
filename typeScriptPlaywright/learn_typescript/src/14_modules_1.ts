@@ -1,6 +1,7 @@
 /*
-Initially we were creating the class, 
+Initially we were creating the class and 
 creating the objects and calling the functions defined in the class in the same file.
+We can seggregate using modules.
 If we want to reuse some code defined in different files we use modules.
 
 What are Modules?
