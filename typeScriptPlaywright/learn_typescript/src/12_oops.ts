@@ -18,8 +18,8 @@ class Employee{
     age: number;
 
     // constructor
-    constructor(emp_name: string, age: number){
-        this.emp_name = emp_name;
+    constructor(empname: string, age: number){
+        this.emp_name = empname;
         this.age = age;
     }
 
@@ -35,9 +35,12 @@ class Employee{
 
     // create function with string
     greet() : string {
-        return `Hello I'm ${this.emp_name}`
+        return `Hello I am ${this.emp_name}`
     }
 }
 
 const p1 = new Employee("Arunava", 40);
-p1.greet()
+p1.welcome();
+let final = p1.add(10, 20);
+console.log(final);
+console.log(p1.greet());
