@@ -5,3 +5,39 @@ and each value can be of any type
 
 Objects can also include methods, which are functions associated with the object.
 */
+
+let emp_details = {
+    name: "Arunava",
+    age: 40,
+    isDeveloper: true
+}
+console.log(emp_details.name)
+
+let emp_new : {
+    name: string,
+    age: number,
+    isDeveloper: boolean
+} = {
+    name: "Rahul",
+    age: 30,
+    isDeveloper: true
+}
+
+//Objects with Methods
+// It has a function called drive which returns a string
+let car = {
+    brand: "BMW",
+    speed: 200,
+    drive(): string{
+        return "Driving too fast!"
+    }
+}
+console.log(car.drive())
+
+//Merge Objects
+let obj1 = {name: "Arunava", age: 40};
+let obj2 = {role:"Developer", country:"India"};
+
+let merged =  {...obj1, ...obj2};
+console.log(merged);
+console.log(merged.name);
