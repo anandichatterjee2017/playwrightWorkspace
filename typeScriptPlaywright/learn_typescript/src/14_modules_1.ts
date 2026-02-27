@@ -1,4 +1,8 @@
 /*
+Initially we were creating the class, 
+creating the objects and calling the functions defined in the class in the same file.
+If we want to reuse some code defined in different files we use modules.
+
 What are Modules?
 
 Modules are individual files in Typescript. Anything declared in one module is scoped to 
