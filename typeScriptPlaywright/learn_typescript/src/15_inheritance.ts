@@ -22,25 +22,62 @@ class WebDriver {
 
 /*
 Launch browser has seperate functionality in ChromeDriver class and FirefoxDriver class.
-*/
+We can create an instance of ChromeDriver and FirefoxDriver and call the launchBrowser method.
+launch browser implementation / functionality is different.
+
 // child class
-class ChromeDriver{
+class ChromeDriver {
     launchBrowser(): void {
         console.log("Launched Chrome Driver")
     }
 }
 
 // child class
-class FirefoxDriver{
+class FirefoxDriver {
     launchBrowser(): void {
         console.log("Launched Firefox Driver")
     }
 }
-/*
-We can create an instance of ChromeDriver and FirefoxDriver and call the launchBrowser method.
-*/
+
 const chrome = new ChromeDriver();
 chrome.launchBrowser();
 
 const firefox = new FirefoxDriver();
 firefox.launchBrowser();
+*/
+
+/*
+We also need to use the navigate() for both chrome driver and firefox driver.
+For this either we need to implement the same method in both the subclasses 
+or use the implementation of navigate() from the base class.
+
+To use the properties / methods of the parent class we use the extend keyword.
+
+Note: Whenever the parent class has a constructor with arguements in that scenario whenever 
+ we create an object of the child class we need to pass the value to the parent class constructor.
+
+ One more thing we are able to access navigate() from the object of ChromeDriver or FirefoxDriver
+ ince it is declared as public.
+ Had it been private / protected we would have encountered error.
+*/
+
+class ChromeDriver extends WebDriver{
+    launchBrowser(): void {
+        console.log("Launched Chrome Driver")
+    }
+}
+
+// child class
+class FirefoxDriver extends WebDriver{
+    launchBrowser(): void {
+        console.log("Launched Firefox Driver")
+    }
+}
+
+const chrome = new ChromeDriver("https://www.google.com");
+chrome.launchBrowser();
+chrome.navigate();
+
+const firefox = new FirefoxDriver("https://www.facebook.com");
+firefox.launchBrowser();
+firefox.navigate();
