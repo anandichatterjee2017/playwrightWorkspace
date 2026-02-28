@@ -3,8 +3,8 @@
 Inheritance is a process of inheriting properties from parent.
 The child class / subclass can inherit the property of the parent / base / super class.
 
-Instead of reimplementing the properties again if the parent class has some property 
-which the child class wants to access we can use inheritance.
+Instead of reimplementing the properties again if the child class wants to access the properties
+of the parent class then we can use inheritance.
 */
 
 // main class
@@ -23,7 +23,7 @@ class WebDriver {
 /*
 Launch browser has seperate functionality in ChromeDriver class and FirefoxDriver class.
 We can create an instance of ChromeDriver and FirefoxDriver and call the launchBrowser method.
-launch browser implementation / functionality is different.
+launch browser implementation / functionality is different accross different browsers.
 
 // child class
 class ChromeDriver {
@@ -51,13 +51,13 @@ We also need to use the navigate() for both chrome driver and firefox driver.
 For this either we need to implement the same method in both the subclasses 
 or use the implementation of navigate() from the base class.
 
-To use the properties / methods of the parent class we use the extend keyword.
+To use the properties / methods of the parent class we use the extends keyword.
 
-Note: Whenever the parent class has a constructor with arguements in that scenario whenever 
+Note: Whenever the parent class has a constructor with arguements in that scenario when 
  we create an object of the child class we need to pass the value to the parent class constructor.
 
  One more thing we are able to access navigate() from the object of ChromeDriver or FirefoxDriver
- ince it is declared as public.
+ ince it is declared as public. If we dont mention any access modifier by default it is public.
  Had it been private / protected we would have encountered error.
  For protected error : Property 'navigate' is protected and only accessible within class 'WebDriver' and its subclasses.
  For private error : Property 'navigate' is private and only accessible within class 'WebDriver'.ts(2341)
