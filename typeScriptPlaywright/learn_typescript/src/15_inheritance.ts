@@ -59,11 +59,15 @@ Note: Whenever the parent class has a constructor with arguements in that scenar
  One more thing we are able to access navigate() from the object of ChromeDriver or FirefoxDriver
  ince it is declared as public.
  Had it been private / protected we would have encountered error.
+ For protected error : Property 'navigate' is protected and only accessible within class 'WebDriver' and its subclasses.
+ For private error : Property 'navigate' is private and only accessible within class 'WebDriver'.ts(2341)
+(method) WebDriver.navigate(): void
 */
 
 class ChromeDriver extends WebDriver{
     launchBrowser(): void {
         console.log("Launched Chrome Driver")
+        //this.navigate();
     }
 }
 
