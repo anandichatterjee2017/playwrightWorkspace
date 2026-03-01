@@ -37,6 +37,7 @@ class ChromeDriver3 extends WebDriver3, RemoteWebDriver{
  Instance variable cannot be initiated inside a interface.
  We also cannot create an object of the interface since it is not complete.
  Also we can achieve multiple inheriteance. Here ChromeDriver class implements both WebDriver and RemoteWebDriver interface. We are allowed to implement multiple inheritence
+ When a class implements an interface it has to implement all the abstract functions and initialize the vairables mentioned in the interface
 */
 
 interface WebDriver4{
