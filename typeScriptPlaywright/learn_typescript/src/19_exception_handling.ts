@@ -35,7 +35,7 @@ class Exceptions{
             console.log(numbers[6]);
             // This will return an exception because we are trying to convert undefined to string.
            console.log(numbers[6].toString());
-            // If no errors hello will be printed
+            // Since code has gone to the catch block Hello will not be printed.
             console.log("Hello");
 
         }
@@ -43,7 +43,24 @@ class Exceptions{
             console.log("An error occured in array index "+e.message);
         }
 
-
+        try{
+            const a = 10;
+            const b = 0;
+            const result = a/b; //gives to infinity
+            console.log(result);
+            // Even if we decide a number by zero no exception is happening 
+            // So code is not going to the catch block
+            // In Javascript dividing a number by zero returns INFINITY
+            // So here if the number is not finite we will throw an exception and code is going to catch block
+            
+            if(!isFinite(result)){
+                throw new Error("Division by ZERO is not allowed");
+            }
+        }catch(e: any){
+            console.log("An Error occurred: "+e.message);
+        } finally{
+            console.log("This will always be executed.");
+        }
     }
 }
 Exceptions.main()
