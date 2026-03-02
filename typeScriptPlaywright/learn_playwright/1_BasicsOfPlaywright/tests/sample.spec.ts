@@ -9,16 +9,21 @@ test('way2automation test', async ({ page }) => {
 
     // assertions
     await expect(title).toContain('Way2Automation');
-
+    
     // launch a new page
     await page.goto("http://gmail.com");
+    await page.waitForTimeout(2000);
 
     // Go to the previous page
     await page.goBack();
+    await page.waitForTimeout(2000);
 
     // Go to the next page
     await page.goForward();
+    await page.waitForTimeout(2000);
 
     // Refreshes the page
     await page.reload();
+    await page.waitForTimeout(2000);
+    
 });
