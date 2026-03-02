@@ -25,5 +25,23 @@ test('way2automation test', async ({ page }) => {
     // Refreshes the page
     await page.reload();
     await page.waitForTimeout(2000);
-    
+
+});
+
+test('Finding Locators', async({page}) => {
+    // Maximise the page
+    await page.setViewportSize({width: 1920, height: 1080});
+    // Launch URL
+    await page.goto('http://gmail.com');
+    await page.waitForTimeout(2000);
+    // Find locator by label
+    //await page.getByLabel('Email or phone', {exact: true}).fill("arunava.chatterjee@gmail.com");
+    // Find locator by css
+    //await page.locator('#identifierId').fill("arunava.chatterjee@gmail.com");
+    // Find locator by xpath
+    await page.locator('//*[@id="identifierId"]').fill("arunava.chatterjee@gmail.com");
+    await page.waitForTimeout(2000);
+    // Locate the button using filter by text on the button attribute
+    await page.locator('button').filter({hasText: 'Next'}).click();
+    await page.waitForTimeout(2000);
 });
