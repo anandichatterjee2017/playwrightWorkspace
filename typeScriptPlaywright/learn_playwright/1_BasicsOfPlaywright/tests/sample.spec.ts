@@ -135,7 +135,16 @@ test('Assertions', async({page}) => {
         await expect(page).toHaveTitle('HTML Tutorial - Checkboxes');
         console.log('Page title verified');
 
-        const link = page.locator("xpath=//a[contains(@href,'tags.php')][not(contains(@href,'format'))]");
+        const link = await page.locator("xpath=//a[contains(@href,'tags.php')][not(contains(@href,'format'))]");
         await expect(link).toHaveText('HTML - Tags');
         console.log('Text assertion is passed');
+
+        const checkbox = await page.locator("xpath=//h1[contains(text(),'HTML - Checkbox Forms')]/following-sibling::div[@class='display'][1]/input[@value='soccer']");
+        await expect(checkbox).toBeVisible();
+        console.log("Checkbox is Visible");
+
+        await checkbox.click();
+        await expect(checkbox).toBeChecked();
+
+        await page.waitForTimeout(2000);
 });
