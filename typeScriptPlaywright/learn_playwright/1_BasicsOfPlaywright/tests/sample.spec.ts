@@ -116,4 +116,26 @@ test('Handling checkboxes', async({page}) => {
     for(let i=0; i< checkboxCount; i++){
         await CheckBoxes.nth(i).click();
     }
-})
+    await page.waitForTimeout(2000);
+});
+
+test('Assertions', async({page}) => {
+        // Maximise the page
+        await page.setViewportSize({width: 1920, height: 1080});
+        // Launch URL
+        await page.goto('http://www.tizag.com/htmlT/htmlcheckboxes.php');
+        await page.waitForTimeout(2000);
+
+        await expect(page).toHaveURL('http://www.tizag.com/htmlT/htmlcheckboxes.php');
+        console.log('URL assertion passed');
+
+        await expect(page).not.toHaveURL('/error/');
+        console.log('No errors on the page');
+
+        await expect(page).toHaveTitle('HTML Tutorial - Checkboxes');
+        console.log('Page title verified');
+
+        const link = page.locator("xpath=//a[contains(@href,'tags.php')][not(contains(@href,'format'))]");
+        await expect(link).toHaveText('HTML - Tags');
+        console.log('Text assertion is passed');
+});
