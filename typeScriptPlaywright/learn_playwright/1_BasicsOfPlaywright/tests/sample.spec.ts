@@ -99,3 +99,21 @@ test('Handling links', async({page}) => {
     await footerNavblock.locator('a').nth(1).click();
     await page.waitForTimeout(2000);
 });
+
+test('Handling checkboxes', async({page}) => {
+    // Maximise the page
+    await page.setViewportSize({width: 1920, height: 1080});
+    // Launch URL
+    await page.goto('http://www.tizag.com/htmlT/htmlcheckboxes.php');
+    await page.waitForTimeout(2000);
+
+    const firstDiv = page.locator("xpath=//h1[contains(text(),'HTML - Checkbox Forms')]/following-sibling::div[@class='display'][1]");
+    const CheckBoxes = await firstDiv.locator("[name='sports']");
+    const checkboxCount = await CheckBoxes.count();
+
+    console.log(checkboxCount);
+
+    for(let i=0; i< checkboxCount; i++){
+        await CheckBoxes.nth(i).click();
+    }
+})
