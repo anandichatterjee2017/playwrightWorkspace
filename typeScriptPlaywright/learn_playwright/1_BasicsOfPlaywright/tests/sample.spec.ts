@@ -148,3 +148,54 @@ test('Assertions', async({page}) => {
 
         await page.waitForTimeout(2000);
 });
+
+test('Handling webtables', async({page}) => {
+        // Maximise the page
+        await page.setViewportSize({width: 1920, height: 1080});
+        // Launch URL
+        await page.goto('https://money.rediff.com/indices/nse/NIFTY-50?src=moneyhome_nseIndices');
+        await page.waitForTimeout(2000);
+
+        const rowCount = await page.locator("#leftcontainer > table > tbody > tr").count();
+        console.log('row count is '+rowCount);
+
+        const colNum = await page.locator("#leftcontainer>table>tbody>tr:first-child>td").count();
+        console.log('column number is '+colNum);
+
+        const text = await page.locator('#leftcontainer > table > tbody > tr:nth-child(1) > td:first-child');
+        expect(text).toContainText('Adani');
+        console.log(await text.innerText());
+
+        // Print value of all the td below tr
+        const allInnerText = await page.locator("#leftcontainer > table > tbody > tr").allInnerTexts();
+        for(const tableText of allInnerText){
+           
+            console.log(tableText);
+        }
+        await page.waitForTimeout(3000);
+});
+
+test('Shadow Root Element', async ({ page }) => {
+
+    await page.setViewportSize({width:1920, height:1080});
+    await page.goto('chrome://downloads/');
+    await page.waitForTimeout(3000)
+    await page.locator('#searchInput').fill("Playwright");
+
+
+    await page.waitForTimeout(3000)
+
+  });
+
+  test('Mouse Hover Element', async ({ page }) => {
+
+    await page.setViewportSize({width:1920, height:1080});
+    await page.goto('https://www.way2automation.com/');
+    
+    // Using hover function we hover on a web element
+    await page.locator('//*[@id="menu-item-27580"]/a/span[2]').hover();
+    await page.locator('//*[@id="menu-item-27581"]/a').click();
+
+    await page.waitForTimeout(3000)
+
+  });
