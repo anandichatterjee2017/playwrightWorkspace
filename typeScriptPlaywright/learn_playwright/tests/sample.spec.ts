@@ -1,10 +1,10 @@
 import {test, expect} from '@playwright/test'
 
-test('way2automation test', async ({ page }) => {
+test('Playwright test', async ({ page }) => {
     await page.goto('http://way2automation.com');
 
     // Extract page title
-    const title = await page.title();
+    const title = await page.title();``
     console.log(title);
 
     // assertions
@@ -198,4 +198,29 @@ test('Shadow Root Element', async ({ page }) => {
 
     await page.waitForTimeout(3000)
 
+  });
+
+  test('Right Click action', async ({ page }) => {
+
+    await page.setViewportSize({width:1920, height:1080});
+    await page.goto('https://deluxe-menu.com/popup-mode-sample.html');
+    // Using buttton: right we can perform right click action on the web element.
+    await page.locator('//p[2]/img').click({button:'right'});
+    await page.waitForTimeout(3000);
+  });
+
+  test('Handling Alerts', async ({ page }) => {
+
+    //listner handling the event of alert and accepting the alert
+    page.on('dialog', async dialog => {
+        console.log(dialog.message());
+        await dialog.accept();
+    });
+
+    await page.setViewportSize({width:1920, height:1080});
+    await page.goto('https://mail.rediff.com/cgi-bin/login.cgi');
+    // Listen to the dialog event and handle the alert
+    await page.locator('.signin-btn').click();
+
+    await page.waitForTimeout(3000);
   });
