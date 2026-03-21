@@ -236,3 +236,85 @@ test('Shadow Root Element', async ({ page }) => {
     await page.waitForTimeout(3000);
 
   });
+
+
+  test('Handling tabs and popups', async({page}) => {
+    await page.setViewportSize({width:1920, height:1080});
+    await page.goto('https://www.way2automation.com/way2auto_jquery/automation-practice-site.html');
+    // Listen to the popup event and perform action on the web element within the popup
+    // We also need to trigger the event within the Promise that generates the popup
+    const [newPage] = await Promise.all([
+        page.waitForEvent('popup'),
+        page.locator('//*[@id="wrapper"]/div/div/div[3]/ul/li/a/figure/img').click()
+    ]);
+
+    await newPage.waitForLoadState();
+    console.log(await newPage.title());
+
+    const frame = newPage.frames()[1];
+
+    const [secondTab] = await Promise.all([
+        newPage.waitForEvent('popup'),
+        frame.locator('text=New Browser Tab').click()
+    ]);
+    // Wait for page to load
+    await secondTab.waitForLoadState();
+    console.log(await secondTab.title());
+
+    console.log(await secondTab.title());
+    await page.waitForTimeout(3000);
+    secondTab.close();
+    await page.waitForTimeout(3000);
+    newPage.close();
+
+    await page.waitForTimeout(3000);
+  });
+
+  test('Executing Javascript', async({page}) => {
+    await page.setViewportSize({width:1920, height:1080});
+        await page.goto('https://www.w3schools.com/html/tryit.asp?filename=tryhtml_form_submit');
+
+    const frame = page.frameLocator('#iframeResult')
+    await frame.locator('#fname').fill('');
+    await frame.locator('#fname').fill('Rahul');
+    await frame.locator('#lname').fill('');
+    await frame.locator('#lname').fill('Arora');
+
+    await frame.locator('[type="submit"]').evaluate((element: HTMLElement) => {
+        element.style.border = '3px solid red';
+    });
+
+    await page.waitForTimeout(3000)
+  });
+
+  test('Page Screenshot', async({page}) =>{
+    await page.setViewportSize({width:1920, height:1080});
+        await page.goto('https://www.w3schools.com/html/tryit.asp?filename=tryhtml_form_submit');
+
+    const frame = page.frameLocator('#iframeResult')
+    await frame.locator('#fname').fill('');
+    await frame.locator('#fname').fill('Rahul');
+    await frame.locator('#lname').fill('');
+    await frame.locator('#lname').fill('Arora');
+
+    await frame.locator('[type="submit"]').evaluate((element: HTMLElement) => {
+        element.style.border = '3px solid red';
+    });
+
+    await frame.locator('[type="submit"]').screenshot({path:'screenshot/submitButton.png'});
+    await page.screenshot({path:'screenshot/fullPage.png', fullPage:true});
+  });
+
+  test('Http Authentication', async({browser}) => {
+
+    const context = await browser.newContext({
+        httpCredentials: {
+            username: 'admin',
+            password: 'admin'
+        }
+    }); 
+    const page = await context.newPage();
+    await page.setViewportSize({width:1920, height:1080});
+    await page.goto('https://the-internet.herokuapp.com/basic_auth');
+    await page.waitForTimeout(3000);
+  });
