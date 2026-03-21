@@ -224,3 +224,15 @@ test('Shadow Root Element', async ({ page }) => {
 
     await page.waitForTimeout(3000);
   });
+
+  test('Handling Frames', async ({ page }) => {
+    await page.setViewportSize({width:1920, height:1080});
+    await page.goto('https://www.w3schools.com/html/tryit.asp?filename=tryhtml_form_submit');
+    // Switch to the frame using frame locator and perform action on the web element within the frame
+    const frame = page.frameLocator('#iframeResult');
+    frame.locator('#fname').fill('Arunava');
+    frame.locator('#lname').fill('Chatterjee');
+    frame.locator('#submitBtn').click();
+    await page.waitForTimeout(3000);
+
+  });
