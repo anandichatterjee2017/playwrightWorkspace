@@ -318,3 +318,74 @@ test('Shadow Root Element', async ({ page }) => {
     await page.goto('https://the-internet.herokuapp.com/basic_auth');
     await page.waitForTimeout(3000);
   });
+
+    import path from 'path';
+    import fs from 'fs';
+
+    test('File Upload', async ({ page }) => {
+
+   
+    await page.setViewportSize({width:1920, height:1080});
+    await page.goto('https://www.way2automation.com/way2auto_jquery/registration.php#load_box');
+
+    const projectDirectory = path.join(__dirname, 'download');
+    if(!fs.existsSync(projectDirectory)){
+      fs.mkdirSync(projectDirectory);
+    }
+    const filePath = path.join(projectDirectory, 'submitButton.png');
+    console.log(filePath);
+    
+    await page.locator('#register_form > fieldset:nth-child(9) > input[type=file]').setInputFiles(filePath);
+
+    await page.waitForTimeout(3000)
+
+  });
+
+  test('Multiple File Upload', async ({ page }) => {
+
+    await page.setViewportSize({width:1920, height:1080});
+    await page.goto('https://www.w3schools.com/jsref/tryit.asp?filename=tryjsref_fileupload_multiple');
+    
+    const frame = page.frameLocator('#iframeResult')
+
+    const projectDirectory = path.join(__dirname, 'download');
+    if(!fs.existsSync(projectDirectory)){
+      fs.mkdirSync(projectDirectory);
+    }
+    const filePath1 = path.join(projectDirectory, 'submitButton.png');
+    const filePath2 = path.join(projectDirectory, 'fullPage.png');
+
+
+    await frame.locator('#myFile').setInputFiles([
+      filePath1,
+      filePath2
+    ]);
+
+    await page.waitForTimeout(3000)
+
+  });
+
+  test('File Downloading', async ({ page }) => {
+
+   
+    await page.setViewportSize({width:1920, height:1080});
+    await page.goto('https://www.selenium.dev/downloads/');
+    
+    
+    const [download] = await Promise.all([
+      page.waitForEvent('download'), //Listens for the download event
+      page.locator("xpath=//p[contains(text(),'Latest stable version')]/a").click()
+    ]);
+
+
+    const projectDirectory = path.join(__dirname, 'download');
+    if(!fs.existsSync(projectDirectory)){
+      fs.mkdirSync(projectDirectory);
+    }
+    const filePath = path.join(projectDirectory, 'selenium.jar');
+    await download.saveAs(filePath); //Saves the file to the specified path
+    console.log("File Downloaded to : "+filePath);
+
+    await page.waitForTimeout(3000)
+
+  });
