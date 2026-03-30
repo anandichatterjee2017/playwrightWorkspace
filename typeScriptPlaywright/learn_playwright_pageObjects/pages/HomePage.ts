@@ -1,6 +1,8 @@
 import {Page} from '@playwright/test';
 
 export class HomePage {
+
+    // We will create the object of the home page class by passing the page
     private page: Page;
 
     constructor(page: Page) {
@@ -17,7 +19,7 @@ export class HomePage {
     }
 
     // Navigate to the used cars page by hovering on the "NEW CARS" menu and then clicking on the "Find New Cars" submenu
-    async clickOnNewCarsMenu() {
+    async navigateToNewCarsMenu() {
         await this.newCarsMenu().hover();
         await this.page.waitForTimeout(2000);
         await this.usedCarsMenu().click();
