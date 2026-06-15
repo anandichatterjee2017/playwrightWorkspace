@@ -35,7 +35,6 @@ export default defineConfig({
     channel:'chrome',
     headless: false
   },
-
   /* Configure projects for major browsers */
   projects: [
     {

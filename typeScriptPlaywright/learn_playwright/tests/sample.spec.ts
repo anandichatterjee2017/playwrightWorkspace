@@ -1,10 +1,12 @@
 import {test, expect} from '@playwright/test'
+import path from 'path';
+import fs from 'fs';
 
 test('Playwright test', async ({ page }) => {
     await page.goto('http://way2automation.com');
 
     // Extract page title
-    const title = await page.title();``
+    const title = await page.title();
     console.log(title);
 
     // assertions
@@ -318,9 +320,6 @@ test('Shadow Root Element', async ({ page }) => {
     await page.goto('https://the-internet.herokuapp.com/basic_auth');
     await page.waitForTimeout(3000);
   });
-
-    import path from 'path';
-    import fs from 'fs';
 
     test('File Upload', async ({ page }) => {
 
