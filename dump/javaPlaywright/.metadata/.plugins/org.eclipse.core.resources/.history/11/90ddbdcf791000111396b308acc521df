@@ -1,0 +1,28 @@
+package playwright;
+
+import com.microsoft.playwright.Browser;
+import com.microsoft.playwright.BrowserContext;
+import com.microsoft.playwright.BrowserType;
+import com.microsoft.playwright.Page;
+import com.microsoft.playwright.Playwright;
+
+public class LaunchBrowser {
+
+	public static void main(String[] args) {
+		try {
+			Playwright playwright = Playwright.create();
+			Browser browser = playwright.chromium().launch(new BrowserType.LaunchOptions().setHeadless(false));
+			BrowserContext browserContext = browser.newContext(new Browser.NewContextOptions().setViewportSize(1920, 919));
+			Page page = browserContext.newPage();
+			
+			page.navigate("https://playwright.dev/java/");
+			
+			page.close();
+			playwright.close();
+		}
+		catch(Exception e) {
+			System.out.println(e.getMessage());
+		}
+	}
+
+}

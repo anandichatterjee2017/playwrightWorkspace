@@ -1,0 +1,72 @@
+package playwright;
+
+import java.awt.Dimension;
+import java.awt.Toolkit;
+import java.nio.file.Paths;
+import java.util.ArrayList;
+
+import com.microsoft.playwright.Browser;
+import com.microsoft.playwright.BrowserContext;
+import com.microsoft.playwright.BrowserType;
+import com.microsoft.playwright.Page;
+import com.microsoft.playwright.Playwright;
+
+public class MultipleBrowser {
+	public static void main(String[] args) {
+		try {
+			Dimension dimesion =  Toolkit.getDefaultToolkit().getScreenSize();
+			double height = dimesion.getHeight();
+			double width = dimesion.getWidth();
+			System.out.println("Height is: "+height+" width is "+width);
+			
+			ArrayList<String> arguements = new ArrayList<String>();
+			arguements.add("--start-maximized");
+			
+			String browserName = "chrome";
+			String chromePath = "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe";
+			String edgePath = "C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe";
+			
+			if(browserName.equalsIgnoreCase("firefox")) {
+				// Launch Browser in Firefox
+				Playwright playwright = Playwright.create();
+				Browser browser = playwright.firefox().launch(new BrowserType.LaunchOptions().setHeadless(false));
+				BrowserContext browserContext = browser.newContext(new Browser.NewContextOptions().setViewportSize((int)width, (int)height));
+				Page page = browserContext.newPage();
+				
+				page.navigate("https://playwright.dev/java/");
+				System.out.println(page.title());
+				Thread.sleep(2000);
+				page.close();
+				playwright.close();
+			}
+			else if(browserName.equalsIgnoreCase("chrome")) {
+				Playwright playwright = Playwright.create();
+				Browser browser = playwright.chromium().launch(new BrowserType.LaunchOptions().setHeadless(false).setExecutablePath(Paths.get(chromePath)));
+				BrowserContext browserContext = browser.newContext(new Browser.NewContextOptions().setViewportSize((int)width, (int)height));
+				Page page = browserContext.newPage();
+				
+				page.navigate("https://playwright.dev/java/");
+				System.out.println(page.title());
+				Thread.sleep(2000);
+				page.close();
+				playwright.close();
+			}
+			else if(browserName.equalsIgnoreCase("edge")) {
+				// Launch Browser in Firefox
+				Playwright playwright = Playwright.create();
+				Browser browser = playwright.chromium().launch(new BrowserType.LaunchOptions().setHeadless(false).setExecutablePath(Paths.get(edgePath)));
+				BrowserContext browserContext = browser.newContext(new Browser.NewContextOptions().setViewportSize((int)width, (int)height));
+				Page page = browserContext.newPage();
+				
+				page.navigate("https://playwright.dev/java/");
+				System.out.println(page.title());
+				Thread.sleep(2000);
+				page.close();
+				playwright.close();
+			}
+		}
+		catch(Exception e) {
+			System.out.println(e.getMessage());
+		}
+	}
+}
