@@ -12,6 +12,8 @@ export class HomePage {
     // Create locators for the elements on the home page
     private newCarsMenu = () => this.page.locator('a[text="NEW CARS"]');
     private usedCarsMenu = () => this.page.locator('a[text="Find New Cars"]');
+    private lnkSearchCar = () => this.page.getByRole('link').filter({hasText: 'Search Cars'});
+    private lnkUpcomingCarLaunches = () => this.page.getByRole('link',{name: 'Upcoming Car Launches'});
 
     // Navigate to the home page
     async navigateToHomePage() {
@@ -24,4 +26,14 @@ export class HomePage {
         await this.page.waitForTimeout(2000);
         await this.usedCarsMenu().click();
     }  
+
+    async findNewCar(){
+        await this.newCarsMenu().hover();
+    }
+
+    async searchForNewCar(){
+    }
+
+    async upcomingCarLaunches(){
+    }
 }

@@ -15,6 +15,7 @@ test('test', async ({ page }) => {
   await page.getByRole('combobox').nth(1).selectOption('1');
   await page.getByRole('combobox').nth(2).selectOption('1');
   await page.getByRole('combobox').nth(3).selectOption('2014');
+  await page.pause();
   await page.locator('#register_form input[name="phone"]').click();
   await page.locator('#register_form input[name="phone"]').fill('1234567890');
   await page.locator('#register_form input[name="username"]').click();
