@@ -1,5 +1,0 @@
-package playwright;
-
-public class LaunchBrowserMaximize {
-
-}
