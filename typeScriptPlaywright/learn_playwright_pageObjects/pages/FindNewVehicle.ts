@@ -13,7 +13,6 @@ export class FindNewVehicle {
     // Navigate to the used cars page by hovering on the "NEW CARS" menu and then clicking on the "Find New Cars" submenu
     async navigateToFindAVehicle() {
         await this.lnkInventory().hover();
-        //await this.newCarsMenu().click();
         await this.page.waitForTimeout(2000);
         await this.findAVehicle().click();
     }
