@@ -1,0 +1,510 @@
+# Page snapshot
+
+```yaml
+- generic [ref=e1]:
+  - generic:
+    - link "Skip to main content" [ref=e2] [cursor=pointer]:
+      - /url: "#main-container"
+    - link "Skip to footer" [ref=e3] [cursor=pointer]:
+      - /url: "#footer-container"
+  - banner [ref=e4]:
+    - generic [ref=e6]:
+      - generic [ref=e9]:
+        - generic [ref=e10]:
+          - link "Copart" [ref=e13] [cursor=pointer]:
+            - /url: ./
+            - img "Copart" [ref=e14]
+          - generic [ref=e15]:
+            - search:
+              - generic:
+                - generic [ref=e17]:
+                  - button "Search" [ref=e19] [cursor=pointer]
+                  - textbox "Search inventory" [ref=e21]:
+                    - /placeholder: NEW AI Search! enter Make, Model, Damage, Color, VIN, and more...
+                - button "Search inventory" [ref=e23] [cursor=pointer]
+        - generic [ref=e25]:
+          - list [ref=e27]:
+            - listitem [ref=e28]:
+              - button "USA + English" [ref=e29] [cursor=pointer]:
+                - generic [ref=e32]:
+                  - text: USA |
+                  - generic [ref=e33]: English
+          - generic [ref=e35]:
+            - link "Register" [ref=e36] [cursor=pointer]:
+              - /url: ./doRegistration
+            - button "Sign in" [ref=e37] [cursor=pointer]
+      - text: 
+    - navigation [ref=e41]:
+      - list [ref=e43]:
+        - listitem [ref=e44]:
+          - link "How it works" [ref=e45] [cursor=pointer]:
+            - /url: ./how-it-works
+          - text: 
+        - listitem
+        - listitem [ref=e46]:
+          - button "Inventory" [ref=e47] [cursor=pointer]: Inventory
+          - list [ref=e49]:
+            - listitem [ref=e50]:
+              - link "Vehicle finder" [active] [ref=e51] [cursor=pointer]:
+                - /url: ./vehicleFinder
+            - listitem [ref=e52]:
+              - link "Sales list" [ref=e53] [cursor=pointer]:
+                - /url: ./salesListResult
+            - listitem [ref=e54]:
+              - link "Watchlist" [ref=e55] [cursor=pointer]:
+                - /url: ./public/watchList
+            - listitem [ref=e56]:
+              - link "Saved searches" [ref=e57] [cursor=pointer]:
+                - /url: ./savedsearch
+            - listitem [ref=e58]:
+              - link "Vehicle alerts" [ref=e59] [cursor=pointer]:
+                - /url: ./vehicleAlerts
+        - listitem [ref=e60]:
+          - button "Auctions" [ref=e61] [cursor=pointer]: Auctions
+        - listitem [ref=e63]:
+          - link "Locations" [ref=e64] [cursor=pointer]:
+            - /url: ./locations
+        - listitem [ref=e65]:
+          - button "Sell your car" [ref=e66] [cursor=pointer]: Sell your car
+        - listitem [ref=e68]:
+          - button "Services & support" [ref=e69] [cursor=pointer]: Services & support
+        - listitem [ref=e71]:
+          - link "Help center" [ref=e72] [cursor=pointer]:
+            - /url: ./help
+  - main [ref=e74]:
+    - generic [ref=e79]:
+      - generic [ref=e83]:
+        - generic [ref=e86]:
+          - heading "Vehicle Finder" [level=1] [ref=e87]
+          - link "View All Vehicles ›" [ref=e89] [cursor=pointer]:
+            - /url: ./lotSearchResults?intcmp=web_us_en_new_vehiclefinder_top_viewall_link
+        - link [ref=e92] [cursor=pointer]:
+          - /url: https://www.copart.com/banner/www/delivery/cl.php?bannerid=12102&zoneid=214&sig=70b9ae67f159ab006e339b1803b4b8a898b1e921ed64bb44079e8cfce3353b9c&dest=https%3A%2F%2Fwww.copart.com%2FlotSearchResults%3Ffree%3Dtrue%26query%3Dholman%26qId%3Dd97be74a-281d-416a-99ae-757405c4c3a4-1770313041356%26Intcmp_source%3Drevive%26Intcmp_campaign%3Dholman_cars%26Intcmp_medium%3Dinternal%26Intcmp_term%3Dgbl%26Intcmp_content%3Dpromotion
+      - generic [ref=e93]:
+        - generic [ref=e98]:
+          - generic [ref=e99]: Vehicle finder
+          - generic [ref=e101]:
+            - generic [ref=e102]:
+              - generic [ref=e103]:
+                - generic [ref=e104]: Condition
+                - list [ref=e106]:
+                  - listitem [ref=e107] [cursor=pointer]:
+                    - generic [ref=e108]: All
+                  - listitem [ref=e109] [cursor=pointer]:
+                    - generic [ref=e110]: Used
+                  - listitem [ref=e111] [cursor=pointer]:
+                    - generic [ref=e112]: Salvage
+              - generic [ref=e113]:
+                - generic [ref=e114]: Types
+                - generic [ref=e119] [cursor=pointer]:
+                  - combobox "AUTOMOBILE" [ref=e120]
+                  - button "dropdown trigger" [ref=e121]:
+                    - img [ref=e123]
+              - generic [ref=e125]:
+                - generic [ref=e126]: Odometer
+                - generic [ref=e127]:
+                  - generic [ref=e128]:
+                    - generic [ref=e129]: 0 Miles
+                    - generic [ref=e130]: 250,000+ Miles
+                  - generic [ref=e133]:
+                    - slider "Odometer range slider" [ref=e135]
+                    - slider "Odometer range slider" [ref=e136]
+              - generic [ref=e137]:
+                - generic [ref=e138]: Year
+                - generic [ref=e140]:
+                  - generic [ref=e143] [cursor=pointer]:
+                    - combobox "2016" [ref=e144]
+                    - button "dropdown trigger" [ref=e145]:
+                      - img [ref=e147]
+                  - generic [ref=e149]: To
+                  - generic [ref=e152] [cursor=pointer]:
+                    - combobox "2027" [ref=e153]
+                    - button "dropdown trigger" [ref=e154]:
+                      - img [ref=e156]
+              - generic [ref=e158]:
+                - generic [ref=e159]: Damage type
+                - generic [ref=e164] [cursor=pointer]:
+                  - combobox "All Damage Types" [ref=e165]
+                  - button "dropdown trigger" [ref=e166]:
+                    - img [ref=e168]
+              - generic [ref=e170]:
+                - generic [ref=e171]: Make
+                - generic [ref=e176] [cursor=pointer]:
+                  - combobox "All Makes" [ref=e177]
+                  - button "dropdown trigger" [ref=e178]:
+                    - img [ref=e180]
+              - generic [ref=e182]:
+                - generic [ref=e183]: Model
+                - generic [ref=e188]:
+                  - combobox "All Models" [disabled] [ref=e189]
+                  - button "dropdown trigger":
+                    - generic:
+                      - img
+              - generic [ref=e190]:
+                - generic [ref=e191]: Location
+                - generic [ref=e193]:
+                  - generic [ref=e194]:
+                    - generic [ref=e197] [cursor=pointer]:
+                      - radio "Location" [checked]
+                    - generic [ref=e200]: Location
+                  - generic [ref=e201]:
+                    - generic [ref=e204] [cursor=pointer]:
+                      - radio "State / province"
+                    - generic [ref=e206]: State / province
+                  - generic [ref=e207]:
+                    - generic [ref=e210] [cursor=pointer]:
+                      - radio "Zip / postal code"
+                    - generic [ref=e212]: Zip / postal code
+                  - generic [ref=e216] [cursor=pointer]:
+                    - combobox "All Locations" [ref=e217]
+                    - button "dropdown trigger" [ref=e218]:
+                      - img [ref=e220]
+            - generic [ref=e223]:
+              - separator [ref=e224]
+              - strong [ref=e226]: OR
+            - generic [ref=e227]:
+              - generic [ref=e228]: "VIN/Lot #"
+              - textbox "Lookup by VIN or lot number" [ref=e231]
+            - button "Search" [ref=e235] [cursor=pointer]
+        - generic [ref=e237]:
+          - generic [ref=e238]:
+            - generic [ref=e243]:
+              - generic [ref=e244]: Select Your Vehicle Condition
+              - paragraph [ref=e245]: Looking for vehicles in a specific condition? Simplify your search by selecting a category to narrow your results.
+            - tablist [ref=e247]:
+              - tab "All vehicles" [ref=e248]:
+                - generic [ref=e251]: All vehicles
+              - tab "Salvage vehicles" [ref=e252]:
+                - generic [ref=e255]: Salvage vehicles
+              - tab "Used vehicles" [ref=e256]:
+                - generic [ref=e259]: Used vehicles
+          - generic [ref=e264]:
+            - heading "All Used & Salvage Vehicles" [level=2] [ref=e266]
+            - paragraph [ref=e267]: To browse our wide selection of vehicles for sale in daily auto auctions, use the Vehicle Finder on this page, or choose from among the below categories. Using our car finder tools to locate the vehicles you need has never been easier. New vehicle auctions inventory arrives daily, so check back often!
+          - generic [ref=e268]:
+            - generic [ref=e270]:
+              - list [ref=e271]:
+                - listitem [ref=e272]:
+                  - generic [ref=e273]: Featured items
+                - listitem [ref=e274]:
+                  - generic [ref=e275]: Vehicle types
+                - listitem [ref=e276]:
+                  - generic [ref=e277]: Makes
+                - listitem [ref=e278]:
+                  - generic [ref=e279]: Damage
+                - listitem [ref=e280]:
+                  - generic [ref=e281]: Title type
+                - listitem [ref=e282]:
+                  - generic [ref=e283]: States
+                - listitem [ref=e284]:
+                  - generic [ref=e285]: Popular cities
+                - text: +
+              - generic [ref=e291]:
+                - link "Featured items" [ref=e294] [cursor=pointer]:
+                  - /url: vehicle-search-featured/copart-arbitration-inventory?displayStr=Arbitration-Eligible&from=/vehicleFinder
+                  - text: Arbitration-Eligible
+                - link "Featured items" [ref=e297] [cursor=pointer]:
+                  - /url: vehicle-search-featured/electricvehicles?displayStr=Electric%20Vehicles&from=/vehicleFinder
+                  - text: Electric Vehicles
+                - link "Featured items" [ref=e300] [cursor=pointer]:
+                  - /url: vehicle-search-featured/hotitems?displayStr=Hot%20Items&from=/vehicleFinder
+                  - text: Hot Items
+                - link "Featured items" [ref=e303] [cursor=pointer]:
+                  - /url: vehicle-search-featured/fleetlease?displayStr=Fleet%20%2F%20Lease&from=/vehicleFinder
+                  - text: Fleet / Lease
+                - link "Featured items" [ref=e306] [cursor=pointer]:
+                  - /url: vehicle-search-featured/hybridvehicles?displayStr=Hybrid%20Vehicles&from=/vehicleFinder
+                  - text: Hybrid Vehicles
+                - link "Featured items" [ref=e309] [cursor=pointer]:
+                  - /url: vehicle-search-featured/inspected?displayStr=Inspected&from=/vehicleFinder
+                  - text: Inspected
+                - link "Featured items" [ref=e312] [cursor=pointer]:
+                  - /url: vehicle-search-featured/exotics?displayStr=Exotics&from=/vehicleFinder
+                  - text: Exotics
+                - link "Featured items" [ref=e315] [cursor=pointer]:
+                  - /url: vehicle-search-featured/nolicenserequired?displayStr=No%20License%20Required&from=/vehicleFinder
+                  - text: No License Required
+                - link "Featured items" [ref=e318] [cursor=pointer]:
+                  - /url: vehicle-search-featured/buyitnow?displayStr=Buy%20It%20Now&from=/vehicleFinder
+                  - text: Buy It Now
+                - link "Featured items" [ref=e321] [cursor=pointer]:
+                  - /url: vehicle-search-featured/runanddrive?displayStr=Run%20and%20Drive&from=/vehicleFinder
+                  - text: Run and Drive
+                - link "Featured items" [ref=e324] [cursor=pointer]:
+                  - /url: vehicle-search-featured/puresaleitems?displayStr=Pure%20Sale&from=/vehicleFinder
+                  - text: Pure Sale
+                - link "Featured items" [ref=e327] [cursor=pointer]:
+                  - /url: vehicle-search-featured/newitems?displayStr=New%20Items&from=/vehicleFinder
+                  - text: New Items
+                - link "Featured items" [ref=e330] [cursor=pointer]:
+                  - /url: vehicle-search-featured/featuredvehicles?displayStr=Featured%20Vehicles&from=/vehicleFinder
+                  - text: Featured Vehicles
+                - link "Featured items" [ref=e333] [cursor=pointer]:
+                  - /url: vehicle-search-featured/offsitesales?displayStr=Offsite%20Sales&from=/vehicleFinder
+                  - text: Offsite Sales
+                - link "Featured items" [ref=e336] [cursor=pointer]:
+                  - /url: vehicle-search-featured/recoveredthefts?displayStr=Recovered%20Thefts&from=/vehicleFinder
+                  - text: Recovered Thefts
+                - link "Featured items" [ref=e339] [cursor=pointer]:
+                  - /url: vehicle-search-featured/rentals?displayStr=Rentals&from=/vehicleFinder
+                  - text: Rentals
+                - link "Featured items" [ref=e342] [cursor=pointer]:
+                  - /url: vehicle-search-featured/copartgo?displayStr=Public%20and%20General%20Business&from=/vehicleFinder
+                  - text: Public and General Bu...
+                - link "Featured items" [ref=e345] [cursor=pointer]:
+                  - /url: vehicle-search-featured/bakrepossessed?displayStr=Bank%20%2F%20Repossessed&from=/vehicleFinder
+                  - text: Bank / Repossessed
+                - link "Featured items" [ref=e348] [cursor=pointer]:
+                  - /url: vehicle-search-featured/commercialvehicles?displayStr=Commercial%20Vehicles&from=/vehicleFinder
+                  - text: Commercial Vehicles
+                - link "Featured items" [ref=e351] [cursor=pointer]:
+                  - /url: vehicle-search-featured/specialtyvehicles?displayStr=Specialty%20Vehicles&from=/vehicleFinder
+                  - text: Specialty Vehicles
+                - link "Featured items" [ref=e354] [cursor=pointer]:
+                  - /url: vehicle-search-featured/classics?displayStr=Classics&from=/vehicleFinder
+                  - text: Classics
+                - link "Featured items" [ref=e357] [cursor=pointer]:
+                  - /url: vehicle-search-featured/wholesaleauction?displayStr=Wholesale%20Vehicles&from=/vehicleFinder
+                  - text: Wholesale Vehicles
+            - text: + +
+  - contentinfo [ref=e363]:
+    - generic [ref=e367]:
+      - generic [ref=e368]:
+        - generic [ref=e369]:
+          - list [ref=e371]:
+            - listitem [ref=e372]:
+              - link "Copart" [ref=e373] [cursor=pointer]:
+                - /url: ./
+                - img "Copart" [ref=e374]
+            - listitem [ref=e375]:
+              - button "English" [ref=e377] [cursor=pointer]
+            - listitem [ref=e378]:
+              - button "Selected Country Flag USA" [ref=e380] [cursor=pointer]:
+                - generic [ref=e381]:
+                  - img "Selected Country Flag" [ref=e382]
+                  - generic [ref=e383]: USA
+          - list [ref=e385]:
+            - listitem [ref=e386]:
+              - link "‌" [ref=e387] [cursor=pointer]:
+                - /url: https://www.crashedtoys.com/?intcmp=web_copartfooter_ourbrands_en
+            - listitem [ref=e388]:
+              - link "‌" [ref=e389] [cursor=pointer]:
+                - /url: https://www.cashforcars.com/welcome-copart-buyers/?utm_source=copart-us-footer-logo&utm_medium=footerlogo&utm_campaign=webuycars
+            - listitem [ref=e390]:
+              - link "‌" [ref=e391] [cursor=pointer]:
+                - /url: https://www.npauctions.com/?intcmp=web_copartfooter_ourbrands_en
+            - listitem [ref=e392]:
+              - link "‌" [ref=e393] [cursor=pointer]:
+                - /url: https://www.powersportbuyers.com/
+            - listitem [ref=e394]:
+              - link "Purplewave" [ref=e395] [cursor=pointer]:
+                - /url: https://www.purplewave.com/
+                - img "Purplewave" [ref=e396]
+            - listitem [ref=e397]:
+              - link "Quickauction" [ref=e398] [cursor=pointer]:
+                - /url: https://www.quickauction.com
+                - img "Quickauction" [ref=e399]
+        - generic [ref=e400]:
+          - heading "Get to Know Us" [level=4] [ref=e401]
+          - list [ref=e402]:
+            - listitem [ref=e403]:
+              - link "About Copart" [ref=e404] [cursor=pointer]:
+                - /url: ./aboutus?intcmp=web_footer_aboutus_en
+            - listitem [ref=e405]:
+              - link "Our History" [ref=e406] [cursor=pointer]:
+                - /url: /content/us/en/about-copart/our-history?intcmp=web_footer_ourhistory_en
+            - listitem [ref=e407]:
+              - link "How VB3 Works" [ref=e408] [cursor=pointer]:
+                - /url: https://www.copart.com/howVb3Works?intcmp=web_footer_howvb3works_en
+            - listitem [ref=e409]:
+              - link "Community" [ref=e410] [cursor=pointer]:
+                - /url: /content/us/en/landing-page/copart-in-the-community?intcmp=web_footer_copartinthecommunity_en
+            - listitem [ref=e411]:
+              - link "Member News" [ref=e412] [cursor=pointer]:
+                - /url: /content/us/en/member-news/index?intcmp=web_footer_membernewsindex_en
+            - listitem [ref=e413]:
+              - link "Copart Reviews" [ref=e414] [cursor=pointer]:
+                - /url: ./videos/copart-testimonials-and-reviews?intcmp=web_footer_copartreviews_en
+            - listitem [ref=e415]:
+              - link "Careers" [ref=e416] [cursor=pointer]:
+                - /url: /content/us/en/careers?intcmp=web_footer_career_copart_careers_hp
+            - listitem [ref=e417]:
+              - link "Press Releases" [ref=e418] [cursor=pointer]:
+                - /url: /content/us/en/press-releases/index?page=0&intcmp=web_footer_pressreleases_en
+            - listitem [ref=e419]:
+              - link "Investor Relations" [ref=e420] [cursor=pointer]:
+                - /url: ./investorrelation?intcmp=web_footer_investerrelations_en
+        - generic [ref=e421]:
+          - heading "Find a Vehicle" [level=4] [ref=e422]
+          - list [ref=e423]:
+            - listitem [ref=e424]:
+              - link "Vehicle Finder" [ref=e425] [cursor=pointer]:
+                - /url: ./vehicleFinder?intcmp=web_footer_vehiclefinder_en
+            - listitem [ref=e426]:
+              - link "Sales List" [ref=e427] [cursor=pointer]:
+                - /url: ./salesListResult?intcmp=web_footer_saleslists_en
+            - listitem [ref=e428]:
+              - link "Watchlist" [ref=e429] [cursor=pointer]:
+                - /url: ./public/watchList?intcmp=web_footer_watchlistpublic_en
+            - listitem [ref=e430]:
+              - link "Saved Searches" [ref=e431] [cursor=pointer]:
+                - /url: ./savedsearch?intcmp=web_footer_savedsearches_en
+            - listitem [ref=e432]:
+              - link "Vehicle Alerts" [ref=e433] [cursor=pointer]:
+                - /url: ./vehicleAlerts?intcmp=web_footer_vehiclealerts_en
+        - generic [ref=e434]:
+          - heading "Auctions" [level=4] [ref=e435]
+          - list [ref=e436]:
+            - listitem [ref=e437]:
+              - link "Today's Auctions" [ref=e438] [cursor=pointer]:
+                - /url: ./todaysAuction?intcmp=web_footer_todaysauctions_en
+            - listitem [ref=e439]:
+              - link "Auctions Calendar" [ref=e440] [cursor=pointer]:
+                - /url: ./auctionCalendar?intcmp=web_footer_auctioncalendar_en
+            - listitem [ref=e441]:
+              - link "Join Auction" [ref=e442] [cursor=pointer]:
+                - /url: ./auctionDashboard?intcmp=web_footer_auctiondashboard_en
+            - listitem [ref=e443]:
+              - link "Night Cap Sales" [ref=e444] [cursor=pointer]:
+                - /url: /content/us/en/landing-page/night-cap-auctions?intcmp=web_footer_nightcapsales_en
+            - listitem [ref=e445]:
+              - link "Bank-Repo Vehicles" [ref=e446] [cursor=pointer]:
+                - /url: /repo-and-impound-sales?intcmp=web_footer_repovehicles_en
+            - listitem [ref=e447]:
+              - link "Rental Auctions" [ref=e448] [cursor=pointer]:
+                - /url: /rental-sales?intcmp=web_footer_rentalsale_en
+            - listitem [ref=e449]:
+              - link "Wholesale Auctions" [ref=e450] [cursor=pointer]:
+                - /url: /used-cars
+        - generic [ref=e451]:
+          - heading "Services" [level=4] [ref=e452]
+          - list [ref=e453]:
+            - listitem [ref=e454]:
+              - link "Brokers" [ref=e455] [cursor=pointer]:
+                - /url: ./brokersmarketmakers/1?intcmp=web_footer_brokers_en
+            - listitem [ref=e456]:
+              - link "Vehicle Reports" [ref=e457] [cursor=pointer]:
+                - /url: /content/us/en/landing-page/vehicle-reports?intcmp=web_footer_vehiclereports_en
+            - listitem [ref=e458]:
+              - link "Industry Links" [ref=e459] [cursor=pointer]:
+                - /url: /cds?intcmp=web_footer_industrylinks_en
+            - listitem [ref=e460]:
+              - link "Shipping" [ref=e461] [cursor=pointer]:
+                - /url: /international-shipping?intcmp=web_footer_internationalshipping_en
+            - listitem [ref=e462]:
+              - link "Tow Providers" [ref=e463] [cursor=pointer]:
+                - /url: /content/us/en/landing-page/copart-transportation?cid=vn_transportation_app_lp
+            - listitem [ref=e464]:
+              - link "International Buyers" [ref=e465] [cursor=pointer]:
+                - /url: /content/us/en/landing-page/international-buyers?intcmp=web_footer_internationalbuyers_en
+        - generic [ref=e466]:
+          - heading "Support" [level=4] [ref=e467]
+          - list [ref=e468]:
+            - listitem [ref=e469]:
+              - link "Help Center" [ref=e470] [cursor=pointer]:
+                - /url: https://help.copart.com/?intcmp=web_footer_helpcenter_en
+            - listitem [ref=e471]:
+              - link "Glossary of Terms" [ref=e472] [cursor=pointer]:
+                - /url: https://help.copart.com/22724/kb/article/130930/glossary-of-common-terms-used-at-copart
+            - listitem [ref=e473]:
+              - link "Resource Center" [ref=e474] [cursor=pointer]:
+                - /url: /content/us/en/landing-page/resource-center?intcmp=web_footer_resource_center_en
+            - listitem [ref=e475]:
+              - link "Help With Licensing" [ref=e476] [cursor=pointer]:
+                - /url: ./helpWithLicensing?intcmp=web_footer_helpwithlicensing_en
+            - listitem [ref=e477]:
+              - link "Videos" [ref=e478] [cursor=pointer]:
+                - /url: ./videos?intcmp=web_footer_videos_en
+            - listitem [ref=e479]:
+              - link "Member Fees" [ref=e480] [cursor=pointer]:
+                - /url: ./memberFees?intcmp=web_footer_memberfees_en
+            - listitem [ref=e481]:
+              - link "Member Mobile" [ref=e482] [cursor=pointer]:
+                - /url: /content/us/en/landing-page/copart-mobile?intcmp=web_footer_membermobile_en
+            - listitem [ref=e483]:
+              - link "Seller Mobile" [ref=e484] [cursor=pointer]:
+                - /url: /content/us/en/landing-page/seller-mobile?intcmp=web_footer_sellermobile_en
+            - listitem [ref=e485]:
+              - link "New Member Guide" [ref=e486] [cursor=pointer]:
+                - /url: /content/us/en/landing-page/member-guide?intcmp=web_footer_memberguide_en
+        - generic [ref=e487]:
+          - generic [ref=e488]:
+            - heading "Connect with Us" [level=4] [ref=e489]
+            - list [ref=e490]:
+              - listitem [ref=e491]:
+                - link "Facebook" [ref=e492] [cursor=pointer]:
+                  - /url: https://www.facebook.com/Copart
+              - listitem [ref=e493]:
+                - link "Instagram" [ref=e494] [cursor=pointer]:
+                  - /url: https://www.instagram.com/copart1982/
+              - listitem [ref=e495]:
+                - link "TikTok" [ref=e496] [cursor=pointer]:
+                  - /url: https://www.tiktok.com/@copart?
+              - listitem [ref=e497]:
+                - link "LinkedIn" [ref=e498] [cursor=pointer]:
+                  - /url: https://www.linkedin.com/company/copart
+              - listitem [ref=e499]:
+                - link "YouTube" [ref=e500] [cursor=pointer]:
+                  - /url: https://www.youtube.com/copart
+              - listitem [ref=e501]:
+                - link "Blog" [ref=e502] [cursor=pointer]:
+                  - /url: /blog
+          - generic [ref=e503]:
+            - heading "Download the App" [level=4] [ref=e504]
+            - list [ref=e505]:
+              - listitem [ref=e506]:
+                - link "Copart App - Apple Store" [ref=e507] [cursor=pointer]:
+                  - /url: https://itunes.apple.com/us/app/copart-mobile/id414275302
+              - listitem [ref=e508]:
+                - link "Copart App - Google Play" [ref=e509] [cursor=pointer]:
+                  - /url: https://play.google.com/store/apps/details?id=com.copart.membermobile&hl=en
+      - generic [ref=e510]:
+        - generic [ref=e511]:
+          - text: Copyright @
+          - generic [ref=e512]: "2026"
+          - text: Copart Inc. All Rights Reserved
+        - list [ref=e513]:
+          - listitem [ref=e514]:
+            - link "Site Map" [ref=e515] [cursor=pointer]:
+              - /url: ./sitemapslimfooter?intcmp=web_footer_sitemap_en
+          - listitem [ref=e516]:
+            - link "Contact Us" [ref=e517] [cursor=pointer]:
+              - /url: /content/us/en/contact-us/member-services
+          - listitem [ref=e518]:
+            - link "Sell a Vehicle" [ref=e519] [cursor=pointer]:
+              - /url: ./sellForIndividuals?intcmp=web_footer_sellforindividuals_en
+          - listitem [ref=e520]:
+            - link "Terms of Service" [ref=e521] [cursor=pointer]:
+              - /url: /content/us/en/terms-of-use
+          - listitem [ref=e522]:
+            - link "Privacy Policy" [ref=e523] [cursor=pointer]:
+              - /url: ./content/us/en/privacy-policy?intcmp=web_footer_privacypolicy_en
+          - listitem [ref=e524]:
+            - link "Copyright" [ref=e525] [cursor=pointer]:
+              - /url: ./content/us/en/copyright?intcmp=web_footer_copyright_en
+          - listitem [ref=e526]:
+            - link "Terms & Conditions" [ref=e527] [cursor=pointer]:
+              - /url: ./content/us/en/member-terms-and-conditions?intcmp=web_footer_termsandconditions_en
+          - listitem [ref=e528]:
+            - link "Cookie Policy" [ref=e529] [cursor=pointer]:
+              - /url: ./content/us/en/cookie-policy?intcmp=web_footer_cookiepolicy_en
+          - listitem [ref=e530]:
+            - link "Your Privacy Choices" [ref=e531] [cursor=pointer]:
+              - /url: javascript:void(0)
+              - generic [ref=e532]: Your Privacy Choices
+              - img [ref=e533]
+  - generic: 
+  - region "Cookie banner" [ref=e534]:
+    - dialog "Privacy" [ref=e535]:
+      - generic [ref=e537]:
+        - generic [ref=e540]:
+          - text: By clicking “Accept All Cookies”, you agree to the storing of cookies on your device to enhance site navigation, analyze site usage, and assist in our marketing efforts.
+          - link "More information about your cookie policy, opens in a new tab" [ref=e541] [cursor=pointer]:
+            - /url: https://www.copart.com/content/us/en/cookie-policy
+            - text: Cookie Policy
+        - generic [ref=e543]:
+          - button "Cookies Settings, Opens the preference center dialog" [ref=e544] [cursor=pointer]: Cookies Settings
+          - button "Reject All" [ref=e545] [cursor=pointer]
+          - button "Accept All Cookies" [ref=e546] [cursor=pointer]
+      - button "Close" [ref=e548] [cursor=pointer]
+```
