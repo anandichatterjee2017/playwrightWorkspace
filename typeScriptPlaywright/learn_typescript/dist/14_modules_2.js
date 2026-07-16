@@ -1,0 +1,10 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const _14_modules_1_1 = require("./14_modules_1");
+const p1 = new _14_modules_1_1.EmployeeTeam("Arunava", 30);
+p1.welcome();
+console.log(p1.greet());
+let final = p1.add(10, 20);
+console.log(final);
+(0, _14_modules_1_1.adding)(10, 20);
+console.log(_14_modules_1_1.something);

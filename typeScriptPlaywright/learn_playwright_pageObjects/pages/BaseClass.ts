@@ -36,4 +36,8 @@ export class BaseClass {
     async hover(locator: string) {
         await this.page.hover(locator);
     }
+
+    async setTimeout(timeout: number) {
+        await this.page.waitForTimeout(timeout);
+    }
 }

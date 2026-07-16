@@ -1,2 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<qualifiedTypeNameHistroy/>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="businessComponents.LoginComponentIAS"/>
+    <fullyQualifiedTypeName name="org.openqa.selenium.By"/>
+    <fullyQualifiedTypeName name="hooks.CucumberHooks"/>
+    <fullyQualifiedTypeName name="businessComponents.DemoComponent"/>
+</qualifiedTypeNameHistroy>

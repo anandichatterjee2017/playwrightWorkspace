@@ -1,0 +1,35 @@
+"use strict";
+/*
+What is an Object?
+An Object in Typescript is a collection of key-value pairs(properties), where each key is a string
+and each value can be of any type
+
+Objects can also include methods, which are functions associated with the object.
+*/
+let emp_details = {
+    name: "Arunava",
+    age: 40,
+    isDeveloper: true
+};
+console.log(emp_details.name);
+let emp_new = {
+    name: "Rahul",
+    age: 30,
+    isDeveloper: true
+};
+//Objects with Methods
+// It has a function called drive which returns a string
+let car = {
+    brand: "BMW",
+    speed: 200,
+    drive() {
+        return "Driving too fast!";
+    }
+};
+console.log(car.drive());
+//Merge Objects
+let obj1 = { name: "Arunava", age: 40 };
+let obj2 = { role: "Developer", country: "India" };
+let merged = Object.assign(Object.assign({}, obj1), obj2);
+console.log(merged);
+console.log(merged.name);

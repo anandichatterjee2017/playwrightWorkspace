@@ -1,0 +1,6 @@
+{
+    "HomePage": {
+        "lnkInventory": "//div[contains(@class,'desktopScreen')]//a[@data-uname='homePageFindAVehicle']",
+        "findAVehicle": "//div[contains(@class,'desktopScreen')]//a[normalize-space(text())='Vehicle finder']"
+    }
+}

@@ -21,6 +21,10 @@ for (let i = 1; i < numbs.length; i++) {
     numbs[i] = Math.floor(Math.random() * 100) + 1;
     //console.log(numbs[i]);
 }
-for (const numbr in numbs) {
+for (const numbr of numbs) {
     console.log(numbr);
+}
+console.log("----Printing reverse values from an array----");
+for (let i = numbs.length - 1; i >= 0; i--) {
+    console.log(numbs[i]);
 }
