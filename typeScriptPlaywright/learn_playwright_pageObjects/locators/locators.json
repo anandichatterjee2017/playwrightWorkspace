@@ -1,6 +1,14 @@
 {
-    "HomePage": {
+    "FindAVehicle": {
         "lnkInventory": "//div[contains(@class,'desktopScreen')]//a[@data-uname='homePageFindAVehicle']",
         "findAVehicle": "//div[contains(@class,'desktopScreen')]//a[normalize-space(text())='Vehicle finder']"
+    },
+    "Register": {
+        "btnregister": "//a[@data-uname='homePageRegister']",
+        "headerText": "h1[class *= 'member-registration-heading']",
+        "txtEmail": "//input[@id='email']",
+        "txtPassword": "input[id='member-registration-create-password']",
+        "txtMobile": "input[placeholder='999-999-9999']",
+        "btnSubmit": "//button[@type='submit'][text()='Agree and continue']"
     }
 }

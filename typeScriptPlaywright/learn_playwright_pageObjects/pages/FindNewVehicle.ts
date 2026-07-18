@@ -8,7 +8,7 @@ export class FindNewVehicle extends BaseClass {
     /*constructor(page: Page) {
         this.page = page;
     }*/
-    private locators = locators.HomePage;
+    private locators = locators.FindAVehicle;
     constructor(page: Page) {
         super(page);
     }
@@ -21,7 +21,7 @@ export class FindNewVehicle extends BaseClass {
         //await this.lnkInventory().hover();
         //await this.page.waitForTimeout(2000);
         //await this.findAVehicle().click();
-
+        
         this.hover(this.locators.lnkInventory);
         await this.setTimeout(2000);
         await this.click(this.locators.findAVehicle);
