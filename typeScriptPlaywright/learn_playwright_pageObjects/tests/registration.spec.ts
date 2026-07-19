@@ -17,11 +17,11 @@ test.describe('User Registration Test', () => {
 
     test('should register a new user', async ({pages}) => {
         let headerText = await pages.Register.getHeaderText();
+        expect(pages.page).toHaveURL(/.*doRegistration/);
         expect(headerText).toContain('Join the family');
         const email = ''+ Math.floor(Math.random() * 10000) + '@example.com';
         const password = 'Test@1234';
-        const mobile = '1234567890';
+        const mobile = '2025550123';
         await pages.Register.user_register(email, password, mobile);
     });
-
 });
