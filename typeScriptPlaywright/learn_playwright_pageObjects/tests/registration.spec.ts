@@ -1,26 +1,27 @@
-import {test, expect} from '@playwright/test';
-import { Register } from '../pages/RegisterClass';
-import { HomePage } from '../pages/HomePage';
+//import {test, expect} from '@playwright/test';
+//import { Register } from '../pages/RegisterClass';
+//import { HomePage } from '../pages/HomePage';
+import { test, expect } from '../utils/test_base';
 
 test.describe('User Registration Test', () => {
 
-    let registerPage: Register;
-    let homePage: HomePage;
+    //let registerPage: Register;
+    //let homePage: HomePage;
 
-    test.beforeEach(async ({page}) => {
-        registerPage = new Register(page);
-        homePage = new HomePage(page);
-        await homePage.navigateToHomePage();
-        await registerPage.navigateToRegister();
+    test.beforeEach(async ({pages}) => {
+        //registerPage = new Register(page);
+        //homePage = new HomePage(page);
+        await pages.HomePage.navigateToHomePage();
+        await pages.Register.navigateToRegister();
     });
 
-    test('should register a new user', async ({page}) => {
-        let headerText = await registerPage.getHeaderText();
+    test('should register a new user', async ({pages}) => {
+        let headerText = await pages.Register.getHeaderText();
         expect(headerText).toContain('Join the family');
         const email = ''+ Math.floor(Math.random() * 10000) + '@example.com';
         const password = 'Test@1234';
         const mobile = '1234567890';
-        await registerPage.user_register(email, password, mobile);
+        await pages.Register.user_register(email, password, mobile);
     });
 
 });
