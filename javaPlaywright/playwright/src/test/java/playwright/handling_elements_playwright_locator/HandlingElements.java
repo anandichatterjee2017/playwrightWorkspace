@@ -7,6 +7,7 @@ import com.microsoft.playwright.BrowserContext;
 import com.microsoft.playwright.BrowserType;
 import com.microsoft.playwright.Page;
 import com.microsoft.playwright.Playwright;
+import com.microsoft.playwright.Page.TypeOptions;
 
 public class HandlingElements {
 
@@ -23,7 +24,15 @@ public class HandlingElements {
 		
 		page.navigate("https://gmail.com");
 		
-		page.locator("#identifierId").type("trainer@way2automation.com");
+		//page.locator("#identifierId").type("trainer@way2automation.com");
+		//page.locator("[id='identifierId']").type("trainer@way2automation.com");
+		//spage.type("id=identifierId", "trainer@way2automation.com", new TypeOptions().setDelay(100));
+		page.locator("[type=text]").type("trainer@way2automation.com");
+		//page.click("text=Next");
+		page.click("button:has-text('Next')");
+		page.locator("[type=password]").fill("sdfsdfdsf");
+		page.click("button:has-text('Next')");
+		System.out.println(page.locator("//*[@id=\"view_container\"]/div/div/div[2]/div/div[1]/div/form/span/section/div/div/div[1]/div[2]/div[2]/span").innerText());
 		
 		page.close();
 		playwright.close();
