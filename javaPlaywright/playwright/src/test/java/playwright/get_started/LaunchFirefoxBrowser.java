@@ -1,4 +1,4 @@
-package playwright;
+package playwright.get_started;
 
 import java.awt.Dimension;
 import java.awt.Toolkit;
@@ -6,21 +6,22 @@ import java.awt.Toolkit;
 import com.microsoft.playwright.Browser;
 import com.microsoft.playwright.BrowserContext;
 import com.microsoft.playwright.BrowserType;
+import com.microsoft.playwright.BrowserType.LaunchOptions;
 import com.microsoft.playwright.Page;
 import com.microsoft.playwright.Playwright;
 
-public class LaunchBrowser {
+public class LaunchFirefoxBrowser {
 
 	public static void main(String[] args) {
+		
 		try {
-			
 			Dimension dimesion =  Toolkit.getDefaultToolkit().getScreenSize();
 			double height = dimesion.getHeight();
 			double width = dimesion.getWidth();
 			System.out.println("Height is: "+height+" width is "+width);
 			
 			Playwright playwright = Playwright.create();
-			Browser browser = playwright.chromium().launch(new BrowserType.LaunchOptions().setChannel("msedge").setHeadless(false));
+			Browser browser = playwright.firefox().launch(new BrowserType.LaunchOptions().setHeadless(false));
 			BrowserContext browserContext = browser.newContext(new Browser.NewContextOptions().setViewportSize((int)width, (int)height));
 			Page page = browserContext.newPage();
 			
@@ -33,6 +34,8 @@ public class LaunchBrowser {
 		catch(Exception e) {
 			System.out.println(e.getMessage());
 		}
+		
+		
 	}
 
 }

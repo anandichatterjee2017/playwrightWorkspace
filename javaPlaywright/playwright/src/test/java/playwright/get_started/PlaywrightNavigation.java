@@ -1,16 +1,18 @@
-package playwright;
+package playwright.get_started;
 
 import java.awt.Dimension;
 import java.awt.Toolkit;
-import java.util.ArrayList;
 
 import com.microsoft.playwright.Browser;
 import com.microsoft.playwright.BrowserContext;
 import com.microsoft.playwright.BrowserType;
 import com.microsoft.playwright.Page;
+import com.microsoft.playwright.Page.GoBackOptions;
+import com.microsoft.playwright.Page.GoForwardOptions;
 import com.microsoft.playwright.Playwright;
 
-public class LaunchBrowserMaximize {
+public class PlaywrightNavigation {
+
 	public static void main(String[] args) {
 		try {
 			Dimension dimesion =  Toolkit.getDefaultToolkit().getScreenSize();
@@ -18,16 +20,23 @@ public class LaunchBrowserMaximize {
 			double width = dimesion.getWidth();
 			System.out.println("Height is: "+height+" width is "+width);
 			
-			ArrayList<String> arguements = new ArrayList<String>();
-			arguements.add("--start-maximized");
-			
 			Playwright playwright = Playwright.create();
-			Browser browser = playwright.chromium().launch(new BrowserType.LaunchOptions().setChannel("chrome").setHeadless(false).setArgs(arguements));
-			BrowserContext browserContext = browser.newContext(new Browser.NewContextOptions().setViewportSize(null));
+			Browser browser = playwright.chromium().launch(new BrowserType.LaunchOptions().setChannel("chrome").setHeadless(false));
+			BrowserContext browserContext = browser.newContext(new Browser.NewContextOptions().setViewportSize((int)width, (int)height));
 			Page page = browserContext.newPage();
 			
 			page.navigate("https://playwright.dev/java/");
 			System.out.println(page.title());
+			
+			page.navigate("https://google.com");
+			
+			page.goBack(new GoBackOptions().setTimeout(3000));
+			page.waitForTimeout(3000);
+			
+			page.goForward(new GoForwardOptions().setTimeout(3000));
+			page.waitForTimeout(3000);
+			
+			page.reload();
 			Thread.sleep(2000);
 			page.close();
 			playwright.close();

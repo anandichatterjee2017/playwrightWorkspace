@@ -1,4 +1,4 @@
-package playwright;
+package playwright.get_started;
 
 import java.awt.Dimension;
 import java.awt.Toolkit;
