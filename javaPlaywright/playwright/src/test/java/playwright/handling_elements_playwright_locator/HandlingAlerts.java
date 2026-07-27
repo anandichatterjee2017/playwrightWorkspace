@@ -33,6 +33,7 @@ public class HandlingAlerts {
 
 		page.navigate("https://rahulshettyacademy.com/AutomationPractice/");
 		
+		page.waitForTimeout(3000);
 		page.locator("#alertbtn").click();
 		
 		page.onDialog(dialog -> {
