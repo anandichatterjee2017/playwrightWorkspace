@@ -27,7 +27,7 @@ public class HandlingAlerts {
 		
 		BrowserContext browserContext = playwright.chromium().launchPersistentContext(Paths.get(chromedefaultPath), 
 				new BrowserType.LaunchPersistentContextOptions()
-				.setHeadless(false).setExecutablePath(Paths.get(chromePath)));
+				.setHeadless(false).setExecutablePath(Paths.get(chromePath)).setViewportSize((int)width, (int)height));
 		
 		Page page = browserContext.newPage();
 
