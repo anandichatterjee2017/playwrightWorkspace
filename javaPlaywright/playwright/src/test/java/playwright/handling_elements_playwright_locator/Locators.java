@@ -3,20 +3,29 @@ package playwright.handling_elements_playwright_locator;
 import java.awt.Dimension;
 import java.awt.Toolkit;
 import java.io.File;
-import java.nio.file.Paths;
 
 import com.microsoft.playwright.Browser;
 import com.microsoft.playwright.BrowserContext;
 import com.microsoft.playwright.BrowserType;
 import com.microsoft.playwright.Page;
 import com.microsoft.playwright.Playwright;
-import com.microsoft.playwright.Tracing;
-import com.microsoft.playwright.options.SelectOption;
-import static com.microsoft.playwright.assertions.PlaywrightAssertions.assertThat;
 
-public class TraceViewer {
-
+public class Locators {
+	
 	public static void main(String[] args) {
+		/*
+		 * Locators
+		 * XPATH and CSS
+		 * getByRole
+		 * getByText
+		 * getByLabel
+		 * GetByPlaceHolder
+		 * Filter
+		 * first
+		 * Last
+		 * nth
+		 */
+		
 		Dimension dimesion =  Toolkit.getDefaultToolkit().getScreenSize();
 		double height = dimesion.getHeight();
 		double width = dimesion.getWidth();
@@ -29,26 +38,11 @@ public class TraceViewer {
 		Browser browser = playwright.chromium().launch(new BrowserType.LaunchOptions().setChannel("chrome").setHeadless(false));
 		BrowserContext browserContext = browser.newContext(new Browser.NewContextOptions().setViewportSize((int)width, (int)height));
 		
-		// Start tracing before creating / navigating a page.
-		browserContext.tracing().start(new Tracing.StartOptions()
-		  .setScreenshots(true)
-		  .setSnapshots(true)
-		  .setSources(true));
-		
 		Page page = browserContext.newPage();
 		
-		page.navigate("https://rahulshettyacademy.com/loginpagePractise/");
+		page.navigate("https://way2automation.com/way2auto_jquery/registration.php");
 		
-		page.locator("#username").fill("rahulshettyacademy");
-		page.locator("#password").fill("Learning@830$3mK2");
-		page.locator("[value='admin']").click();
-		page.selectOption("select", "Student");
-		page.locator("#signInBtn").click();
-		assertThat(page.locator("h1")).containsText("Shop Name");
 		
-		// Stop tracing and export it into a zip archive.
-		browserContext.tracing().stop(new Tracing.StopOptions()
-		  .setPath(Paths.get("trace.zip")));
 		
 		page.close();
 		playwright.close();
