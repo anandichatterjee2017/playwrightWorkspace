@@ -3,12 +3,14 @@ package playwright.handling_elements_playwright_locator;
 import java.awt.Dimension;
 import java.awt.Toolkit;
 import java.io.File;
-
+import static com.microsoft.playwright.assertions.PlaywrightAssertions.assertThat;
 import com.microsoft.playwright.Browser;
 import com.microsoft.playwright.BrowserContext;
 import com.microsoft.playwright.BrowserType;
+import com.microsoft.playwright.Locator;
 import com.microsoft.playwright.Page;
 import com.microsoft.playwright.Playwright;
+import com.microsoft.playwright.options.AriaRole;
 
 public class Locators {
 	
@@ -42,8 +44,15 @@ public class Locators {
 		
 		page.navigate("https://way2automation.com/way2auto_jquery/registration.php");
 		
+		String headerText = page.getByRole(AriaRole.HEADING, new Page.GetByRoleOptions().setName("Registration Form")).innerHTML();
+		System.out.println(headerText);
 		
-		
+		page.locator("input[type='text']").first().fill("Arunava");
+		page.locator("input[type='text']").nth(1).fill("Chatterjee");
+		assertThat(page.locator("a").filter(new Locator.FilterOptions().setHasText("trainer@way2automation.com"))).isVisible();
+		//page.getByPlaceholder("name@example.com").fill("playwright@microsoft.com");
+		//assertThat(page.getByText("SUBMIT")).isVisible();
+		//page.getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions().setName("Submit")).click();
 		page.close();
 		playwright.close();
 	}
