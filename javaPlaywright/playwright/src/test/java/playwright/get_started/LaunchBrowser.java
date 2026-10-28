@@ -2,6 +2,7 @@ package playwright.get_started;
 
 import java.awt.Dimension;
 import java.awt.Toolkit;
+import java.util.List;
 
 import com.microsoft.playwright.Browser;
 import com.microsoft.playwright.BrowserContext;
@@ -20,8 +21,8 @@ public class LaunchBrowser {
 			System.out.println("Height is: "+height+" width is "+width);
 			
 			Playwright playwright = Playwright.create();
-			Browser browser = playwright.chromium().launch(new BrowserType.LaunchOptions().setChannel("chrome").setHeadless(false));
-			BrowserContext browserContext = browser.newContext(new Browser.NewContextOptions().setViewportSize((int)width, (int)height));
+			Browser browser = playwright.chromium().launch(new BrowserType.LaunchOptions().setChannel("chrome").setArgs(List.of("--start-maximized")).setHeadless(false));
+			BrowserContext browserContext = browser.newContext(new Browser.NewContextOptions().setViewportSize(null));
 			Page page = browserContext.newPage();
 			
 			page.navigate("https://playwright.dev/java/");
